@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_complete_guide/categories_screen.dart';
-import 'package:flutter_complete_guide/category_meals_screen.dart';
+import 'package:flutter_complete_guide/screens/categories_screen.dart';
+import 'package:flutter_complete_guide/screens/category_meals_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -24,9 +24,11 @@ class MyApp extends StatelessWidget {
             )
           ),),
       //the root screen of the App:
-      home: CategoriesScreen(),
+      //home: CategoriesScreen(),
+      initialRoute: '/', //defines which route the app should start with
       routes: {
-        '/category-meals': (ctx) => CategoryMealsScreen(),
+        '/': (ctx) => CategoriesScreen(), //stay for the home: ...
+        CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
       },
     );
   }
